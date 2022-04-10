@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>你好</title>
+</head>
+<body>
+<h1>hello</h1>
+<hr>
+
+<form method="post">
+    {{ form.csrf_token() }}
+    {{ form.username.label }}{{ form.username }}<hr>
+    {{ form.password.label }}{{ form.password }}<hr>
+    {{ form.password2.label }}{{ form.password2 }}<hr>
+    {{ form.submit }}
+    {# 使用遍历获取闪现的消息 #}
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+
+
+</form>
+</body>
+</html>
